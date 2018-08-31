@@ -9,6 +9,31 @@ namespace Searching
     [TestFixture]
     public partial class BinarySearchTest
     {
+        public void Search_SearchValue(Func<int[], int, int> searchFunc)
+        {
+            int[] a = Enumerable.Range(0, (int)Math.Pow(10, 1)).Select((x) => 10*x).ToArray();
+            int minValue = a.Min();
+            int maxValue = a.Max();
+            
+            int value = 75;
+            int index = searchFunc(a, value);
+            if(value % 10 == 0)
+            {
+                Assert.IsTrue(index == value/10);
+            }
+            else
+            {
+                Assert.IsTrue(index == -1);
+            }   
+        }
+
+        [TestCase()]
+        public void Search_SearchValue()
+        {
+            Search_SearchValue(BinarySearch1.Search);
+            Search_SearchValue(BinarySearch2.Search);
+        }
+
         public void Search_SearchValues(Func<int[], int, int> searchFunc)
         {
             int[] a = Enumerable.Range(0, (int)Math.Pow(10, 4)).Select((x) => 10*x).ToArray();

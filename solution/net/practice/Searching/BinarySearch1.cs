@@ -18,11 +18,8 @@ namespace Searching
             
             int middle = (low + high)/2;
 
-            if(value == a[middle])
-            {
-                return middle;
-            }
-            else if(value < a[middle])
+
+            if(value < a[middle])
             {
                 return Search(a, value, low, middle - 1);
             }
@@ -32,7 +29,7 @@ namespace Searching
             }
             else
             {
-                throw new NotSupportedException();
+                return middle;
             }
         }
     }

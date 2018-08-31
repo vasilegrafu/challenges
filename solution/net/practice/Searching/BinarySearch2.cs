@@ -11,24 +11,23 @@ namespace Searching
 
         private static int Search(int[] a, int value, int low, int high)
         {
-            if((high - low) == 1)
+            if(low == high)
             {
                 if(value == a[low])
                 {
                     return low;
                 }
-                if(value == a[high])
+                else
                 {
-                    return high;
+                    return -1;
                 }
-                return -1;
             }
             
             int middle = (low + high)/2;
 
-            if(value < a[middle])
+            if(value <= a[middle])
             {
-                return Search(a, value, low, middle - 1);
+                return Search(a, value, low, middle);
             }
             else
             {
