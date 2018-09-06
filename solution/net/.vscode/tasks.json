@@ -2,12 +2,12 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build practice",
+            "label": "build ds_a",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/practice/practice.csproj"
+                "${workspaceFolder}/ds_a/ds_a.csproj"
             ],
             "problemMatcher": "$msCompile",
             "group": {
@@ -16,12 +16,12 @@
             }
         },
         {
-            "label": "test practice",
+            "label": "test ds_a",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "test",
-                "${workspaceFolder}/practice/practice.csproj"
+                "${workspaceFolder}/ds_a/ds_a.csproj"
             ],
             "problemMatcher": "$msCompile"
         }
