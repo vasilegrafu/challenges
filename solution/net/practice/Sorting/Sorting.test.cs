@@ -9,33 +9,70 @@ namespace Sorting
     [TestFixture]
     public partial class SortingTest
     {
-        public void Sort_SortArray(Action<int[]> sortFunc)
+        //----------------------------------------------------------------  
+        private static int[] GenerateData(int N)
         {
-            int[] a = new int[] { 1, 4, 7, 2, 3, 0, 9, 8, 5, 6 };
-            int n = a.Length;
-            int[] s = a.ToList().OrderBy((p) => p).ToArray();
+            Random random = new Random(DateTime.Now.Millisecond);
+            int minValue = -(int)Math.Pow(10, 8);
+            int maxValue = +(int)Math.Pow(10, 8);
+            int[] a = Enumerable.Repeat(0, N).Select((i, p) => random.Next(minValue, maxValue)).ToArray();
+            return a;
+        }
 
-            sortFunc(a);
-
+        private static bool IsSorted(int[] a)
+        {
             bool isSorted = true;
-            for(int i = 0; i < n; i++)
+            for (int i = 0; i < a.Length-1; i++)
             {
-                if(a[i] != s[i])
+                if (a[i] > a[i+1])
                 {
                     isSorted = false;
                 }
             }
+            return isSorted;
+        }
 
-            Assert.IsTrue(isSorted);  
+        //----------------------------------------------------------------
+        public void Sort_TestIsCorrect(Action<int[]> sortFunc, int N, int C)
+        {
+            int c = 0;
+            while(c <= C)
+            {
+                c++;
+                int[] a = GenerateData(N);
+                sortFunc(a);
+                bool isSorted = IsSorted(a);
+                Assert.IsTrue(isSorted);
+            }
         }
 
         [TestCase()]
-        public void Sort_SortArray()
+        public void Sort_TestIsCorrect()
         {
-            Sort_SortArray(InsertionSort.Sort);
+            Sort_TestIsCorrect(InsertionSort.Sort, (int)Math.Pow(10, 4), (int)Math.Pow(10, 2));
+        }
+
+        //----------------------------------------------------------------
+        public void Sort_TestPerformance(Action<int[]> sortFunc, int N)
+        {
+            int[] a = GenerateData(N);
+
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            sortFunc(a);
+            sw.Stop();
+            TestContext.Progress.WriteLine(String.Format("ElapsedMilliseconds for {0} and N={1}: {2}", sortFunc.Method.DeclaringType.Name, N, sw.ElapsedMilliseconds));
+        }
+
+        [TestCase()]
+        public void Sort_TestPerformance()
+        {
+            Sort_TestPerformance(InsertionSort.Sort, 1*(int)Math.Pow(10, 3));
+            Sort_TestPerformance(InsertionSort.Sort, 2*(int)Math.Pow(10, 3));
+            Sort_TestPerformance(InsertionSort.Sort, 4*(int)Math.Pow(10, 3));
+            Sort_TestPerformance(InsertionSort.Sort, 8*(int)Math.Pow(10, 3));
+            Sort_TestPerformance(InsertionSort.Sort, 16*(int)Math.Pow(10, 3));
+            Sort_TestPerformance(InsertionSort.Sort, 32*(int)Math.Pow(10, 3));
         }
     }
-
-    
-
 }
