@@ -24,6 +24,54 @@
                 "${workspaceFolder}/ds_a/ds_a.csproj"
             ],
             "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "build practice",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/practice/practice.csproj"
+            ],
+            "problemMatcher": "$msCompile",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "test practice",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "test",
+                "${workspaceFolder}/practice/practice.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "build contests",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/contests/contests.csproj"
+            ],
+            "problemMatcher": "$msCompile",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "test contests",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "test",
+                "${workspaceFolder}/contests/contests.csproj"
+            ],
+            "problemMatcher": "$msCompile"
         }
     ]
 }
