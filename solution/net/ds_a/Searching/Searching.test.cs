@@ -21,7 +21,7 @@ namespace Searching
         }
 
         //----------------------------------------------------------------
-        public void Search_TestIsCorrect(Func<int[], int, int> searchFunc, int N, int R)
+        public void Search_TestCorrectness(Func<int[], int, int> searchFunc, int N, int R)
         {
             (int[] a, int[] values) = GenerateData(N, R);
             foreach (int value in values)
@@ -32,11 +32,11 @@ namespace Searching
         }
 
         [TestCase()]
-        public void Search_SearchValues()
+        public void Search_TestCorrectness()
         {
-            Search_TestIsCorrect(LinearSearch.Search, (int)Math.Pow(10, 4), (int)Math.Pow(10, 2));
-            Search_TestIsCorrect(BinarySearch1.Search, (int)Math.Pow(10, 4), (int)Math.Pow(10, 2));
-            Search_TestIsCorrect(BinarySearch2.Search, (int)Math.Pow(10, 4), (int)Math.Pow(10, 2));
+            Search_TestCorrectness(LinearSearch.Search, (int)Math.Pow(10, 4), (int)Math.Pow(10, 2));
+            Search_TestCorrectness(BinarySearch1.Search, (int)Math.Pow(10, 4), (int)Math.Pow(10, 2));
+            Search_TestCorrectness(BinarySearch2.Search, (int)Math.Pow(10, 4), (int)Math.Pow(10, 2));
         }
 
         //----------------------------------------------------------------

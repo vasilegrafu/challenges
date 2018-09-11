@@ -33,7 +33,7 @@ namespace Sorting
         }
 
         //----------------------------------------------------------------
-        public void Sort_TestIsCorrect(Action<int[]> sortFunc, int N, int C)
+        public void Sort_TestCorrectness(Action<int[]> sortFunc, int N, int C)
         {
             int c = 0;
             while(c <= C)
@@ -47,9 +47,9 @@ namespace Sorting
         }
 
         [TestCase()]
-        public void Sort_TestIsCorrect()
+        public void Sort_TestCorrectness()
         {
-            Sort_TestIsCorrect(InsertionSort.Sort, (int)Math.Pow(10, 4), (int)Math.Pow(10, 2));
+            Sort_TestCorrectness(InsertionSort.Sort, (int)Math.Pow(10, 4), (int)Math.Pow(10, 2));
         }
 
         //----------------------------------------------------------------
