@@ -34,9 +34,14 @@ namespace Searching
         [TestCase()]
         public void Search_TestCorrectness()
         {
-            Search_TestCorrectness(LinearSearch.Search, (int)Math.Pow(10, 4), (int)Math.Pow(10, 2));
-            Search_TestCorrectness(BinarySearch1.Search, (int)Math.Pow(10, 4), (int)Math.Pow(10, 2));
-            Search_TestCorrectness(BinarySearch2.Search, (int)Math.Pow(10, 4), (int)Math.Pow(10, 2));
+            int N = (int)Math.Pow(10, 4);
+            int R = (int)Math.Pow(10, 2);
+            Search_TestCorrectness(LinearSearch.Search, N, R);
+
+            N = (int)Math.Pow(10, 4);
+            R = (int)Math.Pow(10, 2);
+            Search_TestCorrectness(BinarySearch1.Search, N, R);
+            Search_TestCorrectness(BinarySearch2.Search, N, R);
         }
 
         //----------------------------------------------------------------
@@ -56,9 +61,14 @@ namespace Searching
         [TestCase()]
         public void Search_TestPerformance()
         {
-            Search_TestPerformance(LinearSearch.Search, (int)Math.Pow(10, 4), (int)Math.Pow(10, 4));
-            Search_TestPerformance(BinarySearch1.Search, (int)Math.Pow(10, 8), (int)Math.Pow(10, 5));
-            Search_TestPerformance(BinarySearch2.Search, (int)Math.Pow(10, 8), (int)Math.Pow(10, 5));
+            int N = (int)Math.Pow(10, 4);
+            int R = (int)Math.Pow(10, 4);
+            Search_TestPerformance(LinearSearch.Search, N, R);
+
+            N = (int)Math.Pow(10, 4);
+            R = (int)Math.Pow(10, 4);
+            Search_TestPerformance(BinarySearch1.Search, N, R);
+            Search_TestPerformance(BinarySearch2.Search, N, R);
         }
     }
 }

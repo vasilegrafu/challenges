@@ -49,7 +49,12 @@ namespace Sorting
         [TestCase()]
         public void Sort_TestCorrectness()
         {
-            Sort_TestCorrectness(InsertionSort.Sort, (int)Math.Pow(10, 4), (int)Math.Pow(10, 2));
+            int N = (int)Math.Pow(10, 3);
+            int C = (int)Math.Pow(10, 2);
+            Sort_TestCorrectness(BubbleSort.Sort, N, C);
+            Sort_TestCorrectness(SelectionSort.Sort, N, C);
+            Sort_TestCorrectness(InsertionSort.Sort, N, C);
+            Sort_TestCorrectness(MergeSort.Sort, N, C);
         }
 
         //----------------------------------------------------------------
@@ -67,12 +72,15 @@ namespace Sorting
         [TestCase()]
         public void Sort_TestPerformance()
         {
-            Sort_TestPerformance(InsertionSort.Sort, 1*(int)Math.Pow(10, 3));
-            Sort_TestPerformance(InsertionSort.Sort, 2*(int)Math.Pow(10, 3));
-            Sort_TestPerformance(InsertionSort.Sort, 4*(int)Math.Pow(10, 3));
-            Sort_TestPerformance(InsertionSort.Sort, 8*(int)Math.Pow(10, 3));
-            Sort_TestPerformance(InsertionSort.Sort, 16*(int)Math.Pow(10, 3));
-            Sort_TestPerformance(InsertionSort.Sort, 32*(int)Math.Pow(10, 3));
+            int C = 5;
+            for(int i = 0; i <= C; i++) 
+            {
+                int N = (int)Math.Pow(2, i)*(int)Math.Pow(10, 3);
+                Sort_TestPerformance(BubbleSort.Sort, N);
+                Sort_TestPerformance(SelectionSort.Sort, N);
+                Sort_TestPerformance(InsertionSort.Sort, N);  
+                Sort_TestPerformance(MergeSort.Sort, N);  
+            }
         }
     }
 }
