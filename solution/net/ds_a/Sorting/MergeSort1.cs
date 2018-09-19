@@ -2,7 +2,7 @@ using System;
 
 namespace Sorting
 {
-    public class MergeSort
+    public class MergeSort1
     {
         public static void Sort(int[] a)
         {

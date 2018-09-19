@@ -54,7 +54,8 @@ namespace Sorting
             Sort_TestCorrectness(BubbleSort.Sort, N, C);
             Sort_TestCorrectness(SelectionSort.Sort, N, C);
             Sort_TestCorrectness(InsertionSort.Sort, N, C);
-            Sort_TestCorrectness(MergeSort.Sort, N, C);
+            Sort_TestCorrectness(MergeSort1.Sort, N, C);
+            Sort_TestCorrectness(MergeSort2.Sort, N, C);
         }
 
         //----------------------------------------------------------------
@@ -79,7 +80,8 @@ namespace Sorting
                 Sort_TestPerformance(BubbleSort.Sort, N);
                 Sort_TestPerformance(SelectionSort.Sort, N);
                 Sort_TestPerformance(InsertionSort.Sort, N);  
-                Sort_TestPerformance(MergeSort.Sort, N);  
+                Sort_TestPerformance(MergeSort1.Sort, N);  
+                Sort_TestPerformance(MergeSort2.Sort, N);
             }
         }
     }
