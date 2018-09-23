@@ -2,12 +2,12 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build ds_a",
+            "label": "build didactic",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/ds_a/ds_a.csproj"
+                "${workspaceFolder}/1.didactic/didactic.csproj"
             ],
             "problemMatcher": "$msCompile",
             "group": {
@@ -16,12 +16,12 @@
             }
         },
         {
-            "label": "test ds_a",
+            "label": "test didactic",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "test",
-                "${workspaceFolder}/ds_a/ds_a.csproj"
+                "${workspaceFolder}/1.didactic/didactic.csproj"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -31,7 +31,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/practice/practice.csproj"
+                "${workspaceFolder}/2.practice/practice.csproj"
             ],
             "problemMatcher": "$msCompile",
             "group": {
@@ -45,7 +45,7 @@
             "type": "process",
             "args": [
                 "test",
-                "${workspaceFolder}/practice/practice.csproj"
+                "${workspaceFolder}/2.practice/practice.csproj"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -55,7 +55,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/contests/contests.csproj"
+                "${workspaceFolder}/3.contests/contests.csproj"
             ],
             "problemMatcher": "$msCompile",
             "group": {
@@ -69,7 +69,7 @@
             "type": "process",
             "args": [
                 "test",
-                "${workspaceFolder}/contests/contests.csproj"
+                "${workspaceFolder}/3.contests/contests.csproj"
             ],
             "problemMatcher": "$msCompile"
         }

@@ -17,10 +17,10 @@ namespace Practice
         [TestCase()]
         public void Main()
         {
-            using(System.IO.StreamReader file = new System.IO.StreamReader(@"partition:\path"))
+            using(System.IO.StreamReader inputDataFile = new System.IO.StreamReader(@"partition:\path"))
             {
-                int n = Convert.ToInt32(file.ReadLine());
-                int[] arr = Array.ConvertAll(file.ReadLine().Split(' '), p => Convert.ToInt32(p));
+                int n = Convert.ToInt32(inputDataFile.ReadLine());
+                int[] arr = Array.ConvertAll(inputDataFile.ReadLine().Split(' '), p => Convert.ToInt32(p));
             }
            
         }
