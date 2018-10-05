@@ -26,8 +26,6 @@ namespace CoinChange
                 return 0;
             }
 
-            // The bellow relation is  alittle tricky to be understood
-            // 
             return GetNumberOfWays(c, m-1, n) + GetNumberOfWays(c, m, n-c[m-1]);
         }
         

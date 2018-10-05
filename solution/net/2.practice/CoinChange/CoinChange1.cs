@@ -1,11 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using NUnit.Framework;
 
 namespace CoinChange
 {
     public partial class CoinChange1
     {
+        static int nn = 0;
         private static long GetNumberOfWays(int[] c, int n, List<int> way, HashSet<string> computedWays) 
         {        
             if(n > 0)
@@ -38,6 +40,11 @@ namespace CoinChange
             }
             else if(n == 0)
             {
+                nn++;
+                if(nn % 10 == 0)
+                {
+                    TestContext.Progress.WriteLine(nn);
+                }
                 computedWays.Add(String.Join(",", way));
                 return 1;
             }
