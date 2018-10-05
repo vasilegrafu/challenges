@@ -33,7 +33,7 @@ namespace Sorting
         }
 
         //----------------------------------------------------------------
-        public void Sort_TestCorrectness(Action<int[]> sortFunc, int N, int C)
+        private void TestCorrectness(Action<int[]> sortFunc, int N, int C)
         {
             int c = 0;
             while(c <= C)
@@ -47,19 +47,19 @@ namespace Sorting
         }
 
         [TestCase()]
-        public void Sort_TestCorrectness()
+        public void TestCorrectness()
         {
             int N = (int)Math.Pow(10, 3);
             int C = (int)Math.Pow(10, 2);
-            Sort_TestCorrectness(BubbleSort.Sort, N, C);
-            Sort_TestCorrectness(SelectionSort.Sort, N, C);
-            Sort_TestCorrectness(InsertionSort.Sort, N, C);
-            Sort_TestCorrectness(MergeSort1.Sort, N, C);
-            Sort_TestCorrectness(MergeSort2.Sort, N, C);
+            TestCorrectness(BubbleSort.Sort, N, C);
+            TestCorrectness(SelectionSort.Sort, N, C);
+            TestCorrectness(InsertionSort.Sort, N, C);
+            TestCorrectness(MergeSort1.Sort, N, C);
+            TestCorrectness(MergeSort2.Sort, N, C);
         }
 
         //----------------------------------------------------------------
-        public void Sort_TestPerformance(Action<int[]> sortFunc, int N)
+        private void TestPerformance(Action<int[]> sortFunc, int N)
         {
             int[] a = GenerateData(N);
 
@@ -71,17 +71,17 @@ namespace Sorting
         }
 
         [TestCase()]
-        public void Sort_TestPerformance()
+        public void TestPerformance()
         {
             int C = 5;
             for(int i = 0; i <= C; i++) 
             {
                 int N = (int)Math.Pow(2, i)*(int)Math.Pow(10, 3);
-                Sort_TestPerformance(BubbleSort.Sort, N);
-                Sort_TestPerformance(SelectionSort.Sort, N);
-                Sort_TestPerformance(InsertionSort.Sort, N);  
-                Sort_TestPerformance(MergeSort1.Sort, N);  
-                Sort_TestPerformance(MergeSort2.Sort, N);
+                TestPerformance(BubbleSort.Sort, N);
+                TestPerformance(SelectionSort.Sort, N);
+                TestPerformance(InsertionSort.Sort, N);  
+                TestPerformance(MergeSort1.Sort, N);  
+                TestPerformance(MergeSort2.Sort, N);
             }
         }
     }

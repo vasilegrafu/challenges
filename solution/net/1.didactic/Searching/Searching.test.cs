@@ -21,7 +21,7 @@ namespace Searching
         }
 
         //----------------------------------------------------------------
-        public void Search_TestCorrectness(Func<int[], int, int> searchFunc, int N, int R)
+        private void TestCorrectness(Func<int[], int, int> searchFunc, int N, int R)
         {
             (int[] a, int[] values) = GenerateData(N, R);
             foreach (int value in values)
@@ -32,20 +32,20 @@ namespace Searching
         }
 
         [TestCase()]
-        public void Search_TestCorrectness()
+        public void TestCorrectness()
         {
             int N = (int)Math.Pow(10, 4);
             int R = (int)Math.Pow(10, 2);
-            Search_TestCorrectness(LinearSearch.Search, N, R);
+            TestCorrectness(LinearSearch.Search, N, R);
 
             N = (int)Math.Pow(10, 4);
             R = (int)Math.Pow(10, 2);
-            Search_TestCorrectness(BinarySearch1.Search, N, R);
-            Search_TestCorrectness(BinarySearch2.Search, N, R);
+            TestCorrectness(BinarySearch1.Search, N, R);
+            TestCorrectness(BinarySearch2.Search, N, R);
         }
 
         //----------------------------------------------------------------
-        public void Search_TestPerformance(Func<int[], int, int> searchFunc, int N, int R)
+        private void TestPerformance(Func<int[], int, int> searchFunc, int N, int R)
         {
             (int[] a, int[] values) = GenerateData(N, R);
             Stopwatch sw = new Stopwatch();
@@ -59,16 +59,16 @@ namespace Searching
         }
 
         [TestCase()]
-        public void Search_TestPerformance()
+        public void TestPerformance()
         {
             int N = (int)Math.Pow(10, 4);
             int R = (int)Math.Pow(10, 4);
-            Search_TestPerformance(LinearSearch.Search, N, R);
+            TestPerformance(LinearSearch.Search, N, R);
 
             N = (int)Math.Pow(10, 4);
             R = (int)Math.Pow(10, 4);
-            Search_TestPerformance(BinarySearch1.Search, N, R);
-            Search_TestPerformance(BinarySearch2.Search, N, R);
+            TestPerformance(BinarySearch1.Search, N, R);
+            TestPerformance(BinarySearch2.Search, N, R);
         }
     }
 }
