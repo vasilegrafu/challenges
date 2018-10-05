@@ -9,24 +9,24 @@ namespace CoinChange
     [TestFixture]
     public partial class CoinChangeTest
     {
-        private void TestCorrectness(Func<int, int[], long> getNumberOfWaysFunc, int n, int[] c, long numberOfWays)
+        private void TestCorrectness(Func<int[], int, long> getNumberOfWaysFunc, int[] c, int n, long numberOfWays)
         {
-            long numberOfWays2 = getNumberOfWaysFunc(n, c);
+            long numberOfWays2 = getNumberOfWaysFunc(c, n);
             Assert.IsTrue(numberOfWays2 == numberOfWays);
         }
 
         [TestCase()]
         public void TestCorrectness()
         {
-            // TestCorrectness(CoinChange1.GetNumberOfWays, 1, new int[] { 1 }, 1);
-            // TestCorrectness(CoinChange1.GetNumberOfWays, 2, new int[] { 1, 2 }, 2);
-            // TestCorrectness(CoinChange1.GetNumberOfWays, 3, new int[] { 1, 2, 3 }, 3);
-            // TestCorrectness(CoinChange1.GetNumberOfWays, 4, new int[] { 1, 2, 3, 4 }, 5);
+            TestCorrectness(CoinChange1.GetNumberOfWays, new int[] { 1 }, 1, 1);
+            TestCorrectness(CoinChange1.GetNumberOfWays, new int[] { 1, 2 }, 2, 2);
+            TestCorrectness(CoinChange1.GetNumberOfWays, new int[] { 1, 2, 3 }, 3, 3);
+            TestCorrectness(CoinChange1.GetNumberOfWays, new int[] { 1, 2, 3, 4 }, 4, 5);
 
-            TestCorrectness(CoinChange2.GetNumberOfWays, 1, new int[] { 1 }, 1);
-            TestCorrectness(CoinChange2.GetNumberOfWays, 2, new int[] { 1, 2 }, 2);
-            TestCorrectness(CoinChange2.GetNumberOfWays, 3, new int[] { 1, 2, 3 }, 3);
-            TestCorrectness(CoinChange2.GetNumberOfWays, 4, new int[] { 1, 2, 3, 4 }, 5);
+            TestCorrectness(CoinChange2.GetNumberOfWays, new int[] { 1 }, 1, 1);
+            TestCorrectness(CoinChange2.GetNumberOfWays, new int[] { 1, 2 }, 2, 2);
+            TestCorrectness(CoinChange2.GetNumberOfWays, new int[] { 1, 2, 3 }, 3, 3);
+            TestCorrectness(CoinChange2.GetNumberOfWays, new int[] { 1, 2, 3, 4 }, 4, 5);
         }
     }
 }

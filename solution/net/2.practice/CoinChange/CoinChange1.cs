@@ -6,7 +6,7 @@ namespace CoinChange
 {
     public partial class CoinChange1
     {
-        private static long GetNumberOfWays(int n, int[] c, List<int> way, HashSet<string> computedWays) 
+        private static long GetNumberOfWays(int[] c, int n, List<int> way, HashSet<string> computedWays) 
         {        
             if(n > 0)
             {
@@ -29,7 +29,7 @@ namespace CoinChange
 
                     if(!computedWays.Contains(String.Join(",", way)))
                     {
-                        numberOfWays += GetNumberOfWays(n - c[i], c, way, computedWays);
+                        numberOfWays += GetNumberOfWays(c, n - c[i], way, computedWays);
                     }
 
                     way.RemoveAt(index_of_ci);
@@ -49,13 +49,13 @@ namespace CoinChange
             
         }
         
-        public static long GetNumberOfWays(int n, int[] c) 
+        public static long GetNumberOfWays(int[] c, int n) 
         {
             Array.Sort(c);
 
             List<int> way = new List<int>();
             HashSet<string> computedWays = new HashSet<string>();
-            long numberOfWays = GetNumberOfWays(n, c, way, computedWays);
+            long numberOfWays = GetNumberOfWays(c, n, way, computedWays);
             return numberOfWays;
         }
     }
