@@ -2,7 +2,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build didactic",
+            "label": "build-didactic",
             "command": "dotnet",
             "type": "process",
             "args": [
@@ -16,7 +16,7 @@
             }
         },
         {
-            "label": "test didactic",
+            "label": "test-didactic",
             "command": "dotnet",
             "type": "process",
             "args": [
@@ -26,7 +26,7 @@
             "problemMatcher": "$msCompile"
         },
         {
-            "label": "build practice",
+            "label": "build-practice",
             "command": "dotnet",
             "type": "process",
             "args": [
@@ -40,7 +40,7 @@
             }
         },
         {
-            "label": "test practice",
+            "label": "test-practice",
             "command": "dotnet",
             "type": "process",
             "args": [
@@ -50,7 +50,7 @@
             "problemMatcher": "$msCompile"
         },
         {
-            "label": "build contests",
+            "label": "build-contests",
             "command": "dotnet",
             "type": "process",
             "args": [
@@ -64,7 +64,7 @@
             }
         },
         {
-            "label": "test contests",
+            "label": "test-contests",
             "command": "dotnet",
             "type": "process",
             "args": [
