@@ -4,17 +4,17 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build-test1",
+            "label": "build",
             "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/1.didactic/test1",
+            },
             "command": "g++.exe",
             "args": [
-                "-g",
-                "main.cpp"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true 
-            }
+                "-std=c++17",
+                "-g", "main.cpp",
+                "-o", "main.exe"
+            ]
         }
     ] 
 }

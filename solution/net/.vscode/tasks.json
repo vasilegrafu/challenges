@@ -1,6 +1,7 @@
 {
     "version": "2.0.0",
     "tasks": [
+        //----------------------------------------------------------------
         {
             "label": "build-didactic",
             "command": "dotnet",
@@ -25,6 +26,8 @@
             ],
             "problemMatcher": "$msCompile"
         },
+        
+        //----------------------------------------------------------------
         {
             "label": "build-practice",
             "command": "dotnet",
@@ -49,6 +52,8 @@
             ],
             "problemMatcher": "$msCompile"
         },
+
+        //----------------------------------------------------------------
         {
             "label": "build-contests",
             "command": "dotnet",
