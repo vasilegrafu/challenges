@@ -4,25 +4,48 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        //----------------------------------------------------------------
         {
-            "name": "debug",
+            "name": "Start with debugging",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/1.didactic/test1/main.exe",
+            "program": "${fileDirname}/build/debug/${fileBasenameNoExtension}",
             "args": [],
-            "cwd": "${workspaceFolder}/1.didactic/test1",
+            "cwd": "${fileDirname}/build/debug",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
             "miDebuggerPath": "gdb.exe",
-            "preLaunchTask": "build",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
                     "text": "-enable-pretty-printing",
                     "ignoreFailures": true
                 }
-            ]
+            ],
+            "preLaunchTask": "Build file for debug"
+        },
+
+        //----------------------------------------------------------------
+        {
+            "name": "Start without debugging",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/build/release/${fileBasenameNoExtension}",
+            "args": [],
+            "cwd": "${fileDirname}/build/release",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "Build file for release"
         }
     ]
 }
