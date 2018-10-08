@@ -6,7 +6,7 @@
     "configurations": [
         //----------------------------------------------------------------
         {
-            "name": "Start with debugging",
+            "name": "Start debug",
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/build/debug/${fileBasenameNoExtension}",
@@ -28,7 +28,7 @@
 
         //----------------------------------------------------------------
         {
-            "name": "Start without debugging",
+            "name": "Start release",
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/build/release/${fileBasenameNoExtension}",
