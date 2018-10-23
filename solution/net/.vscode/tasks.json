@@ -3,12 +3,12 @@
     "tasks": [
         //----------------------------------------------------------------
         {
-            "label": "build-didactic",
+            "label": "build-0.templates",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/1.didactic/didactic.csproj"
+                "${workspaceFolder}/0.templates/templates.csproj"
             ],
             "problemMatcher": "$msCompile",
             "group": {
@@ -17,50 +17,24 @@
             }
         },
         {
-            "label": "test-didactic",
+            "label": "test-0.templates",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "test",
-                "${workspaceFolder}/1.didactic/didactic.csproj"
-            ],
-            "problemMatcher": "$msCompile"
-        },
-        
-        //----------------------------------------------------------------
-        {
-            "label": "build-practice",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "build",
-                "${workspaceFolder}/2.practice/practice.csproj"
-            ],
-            "problemMatcher": "$msCompile",
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        },
-        {
-            "label": "test-practice",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "test",
-                "${workspaceFolder}/2.practice/practice.csproj"
+                "${workspaceFolder}/0.templates/templates.csproj"
             ],
             "problemMatcher": "$msCompile"
         },
 
         //----------------------------------------------------------------
         {
-            "label": "build-contests",
+            "label": "build-0.temporary",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/3.contests/contests.csproj"
+                "${workspaceFolder}/0.temporary/temporary.csproj"
             ],
             "problemMatcher": "$msCompile",
             "group": {
@@ -69,12 +43,117 @@
             }
         },
         {
-            "label": "test-contests",
+            "label": "test-0.temporary",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "test",
-                "${workspaceFolder}/3.contests/contests.csproj"
+                "${workspaceFolder}/0.temporary/temporary.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+
+        //----------------------------------------------------------------
+        {
+            "label": "build-1.didactic",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/1.didactic/didactic.csproj"
+            ],
+            "problemMatcher": "$msCompile",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "test-1.didactic",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "test",
+                "${workspaceFolder}/1.didactic/didactic.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },       
+
+
+        //----------------------------------------------------------------
+        {
+            "label": "build-2.research",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/2.research/research.csproj"
+            ],
+            "problemMatcher": "$msCompile",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "test-2.research",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "test",
+                "${workspaceFolder}/2.research/research.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+
+        //----------------------------------------------------------------
+        {
+            "label": "build-3.practice",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/3.practice/practice.csproj"
+            ],
+            "problemMatcher": "$msCompile",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "test-3.practice",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "test",
+                "${workspaceFolder}/3.practice/practice.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+
+        //----------------------------------------------------------------
+        {
+            "label": "build-4.contests",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/4.contests/contests.csproj"
+            ],
+            "problemMatcher": "$msCompile",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "test-4.contests",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "test",
+                "${workspaceFolder}/4.contests/contests.csproj"
             ],
             "problemMatcher": "$msCompile"
         }
