@@ -12,17 +12,11 @@ using NUnit.Framework;
 namespace Practice
 {
     [TestFixture]
-    public partial class ProblemTemplate
+    public partial class Template1
     {
         [TestCase()]
         public void Main()
         {
-            using(System.IO.StreamReader inputDataFile = new System.IO.StreamReader(@"partition:\path"))
-            {
-                int n = Convert.ToInt32(inputDataFile.ReadLine());
-                int[] arr = Array.ConvertAll(inputDataFile.ReadLine().Split(' '), p => Convert.ToInt32(p));
-            }
-           
         }
     }
 }
