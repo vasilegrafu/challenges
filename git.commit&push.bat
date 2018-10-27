@@ -1,4 +1,4 @@
 git add .
 git commit
-git push --progress "origin"
+git push --progress origin
 pause
