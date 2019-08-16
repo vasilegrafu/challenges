@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace Sorting
+namespace practice
 {
     public class Tests
     {
