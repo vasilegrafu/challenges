@@ -10,14 +10,14 @@ namespace Permutations
     {
         private static void GeneratePermutations(int[] a, int i, out IList<int[]> permutations) 
         {
-            
+            permutations = null;
         }
 
         public static IList<int[]> GeneratePermutations(int[] a) 
         {
             IList<int[]> permutations = new List<int[]>();
             GeneratePermutations(a, 0, out permutations);
-
+            return permutations;
         }
     }
 }

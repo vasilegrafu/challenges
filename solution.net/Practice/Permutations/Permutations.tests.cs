@@ -9,11 +9,11 @@ namespace Permutations
     [TestFixture]
     public partial class PermutationsTest
     {
-        private void TestCorrectness(Func<int[], IList<int[]>> generatePermutations, int[] a, long permutationsCount)
+        private void TestCorrectness(Func<int[], IList<int[]>> generatePermutationsFunc, int[] a, long expectedPermutationsCount)
         {
-            IList<int[]> permutations = generatePermutations(a);
-            long permutationsCount2 = permutations.Count();
-            Assert.IsTrue(permutationsCount2 == permutationsCount);
+            IList<int[]> permutations = generatePermutationsFunc(a);
+            long permutationsCount = permutations.Count();
+            Assert.IsTrue(permutationsCount == expectedPermutationsCount);
         }
 
         [TestCase()]
