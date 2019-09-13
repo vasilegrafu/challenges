@@ -9,6 +9,13 @@ namespace Permutations
 {
     public partial class Permutations1
     {
+        private static void SwapValues(int[] a, int i, int j)
+        {
+            int t = a[i];
+            a[i] = a[j];
+            a[j] = t;
+        }
+
         private static void GeneratePermutations(int[] a, int s, IList<int[]> permutations) 
         {
             if(s == (a.Length - 1))
@@ -16,13 +23,14 @@ namespace Permutations
                 int[] a2 = new int[a.Length];
                 a.CopyTo(a2, 0);
                 permutations.Add(a2);
+                return;
             }
 
-            for(int i = s; i < a.Length; i++)
+            for(int i = s; i <= (a.Length - 1); i++)
             {
-                a[s] = a[i];
-                GeneratePermutations(a, i, permutations);
-                a[i] = a[s];
+                SwapValues(a, s, i);
+                GeneratePermutations(a, s+1, permutations);
+                SwapValues(a, s, i);
             }
         }
 
