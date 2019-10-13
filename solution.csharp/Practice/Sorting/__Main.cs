@@ -2,11 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using NUnit.Framework;
 
 namespace Sorting
 {
-    [TestFixture]
     public partial class SortingTest
     {
         //--------------------------------------------------------------------------------------------------------------------------------
@@ -39,7 +37,7 @@ namespace Sorting
         // TestCorrectness
         //--------------------------------------------------------------------------------------------------------------------------------
 
-        private void TestCorrectness(Action<int[]> sortFunc, int N, int C)
+        private static void TestCorrectness(Action<int[]> sortFunc, int N, int C)
         {
             int c = 0;
             while(c <= C)
@@ -48,12 +46,11 @@ namespace Sorting
                 int[] a = GenerateData(N);
                 sortFunc(a);
                 bool isSorted = IsSorted(a);
-                Assert.IsTrue(isSorted);
+                Debug.Assert(isSorted);
             }
         }
 
-        [TestCase()]
-        public void TestCorrectness()
+        private static void TestCorrectness()
         {
             int N = (int)Math.Pow(10, 3);
             int C = (int)Math.Pow(10, 2);
@@ -69,7 +66,7 @@ namespace Sorting
         // TestPerformance
         //--------------------------------------------------------------------------------------------------------------------------------
 
-        private void TestPerformance(Action<int[]> sortFunc, int N)
+        private static void TestPerformance(Action<int[]> sortFunc, int N)
         {
             int[] a = GenerateData(N);
 
@@ -77,11 +74,10 @@ namespace Sorting
             sw.Start();
             sortFunc(a);
             sw.Stop();
-            TestContext.Progress.WriteLine(String.Format("ElapsedMilliseconds for {0} and N={1}: {2}", sortFunc.Method.DeclaringType.Name, N, sw.ElapsedMilliseconds));
+            Console.WriteLine(String.Format("ElapsedMilliseconds for {0} and N={1}: {2}", sortFunc.Method.DeclaringType.Name, N, sw.ElapsedMilliseconds));
         }
 
-        [TestCase()]
-        public void TestPerformance()
+        private static void TestPerformance()
         {
             int C = 5;
             for(int i = 0; i <= C; i++) 
@@ -94,5 +90,15 @@ namespace Sorting
                 TestPerformance(MergeSort2.Sort, N);
             }
         }
+
+        //--------------------------------------------------------------------------------------------------------------------------------
+        // Main
+        //--------------------------------------------------------------------------------------------------------------------------------
+
+        static void Main(string[] args)
+        {
+            TestCorrectness();
+            TestPerformance();
+        }   
     }
 }
