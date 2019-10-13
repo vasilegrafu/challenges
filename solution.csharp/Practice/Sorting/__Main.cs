@@ -1,11 +1,11 @@
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Sorting
 {
-    public partial class SortingTest
+    public class __Main
     {
         //--------------------------------------------------------------------------------------------------------------------------------
         // Common
@@ -72,7 +72,9 @@ namespace Sorting
 
             Stopwatch sw = new Stopwatch();
             sw.Start();
+
             sortFunc(a);
+
             sw.Stop();
             Console.WriteLine(String.Format("ElapsedMilliseconds for {0} and N={1}: {2}", sortFunc.Method.DeclaringType.Name, N, sw.ElapsedMilliseconds));
         }

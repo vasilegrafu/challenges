@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using NUnit.Framework;
 
 namespace CoinChange
 {
@@ -26,7 +25,7 @@ namespace CoinChange
                     }
                     way.Insert(index_of_ci, c[i]);
 
-                    //TestContext.Progress.WriteLine(String.Join(",", way));
+                    //Console.WriteLine(String.Join(",", way));
 
                     if(!computedWays.Contains(String.Join(",", way)))
                     {
