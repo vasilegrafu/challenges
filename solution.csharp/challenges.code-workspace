@@ -8,9 +8,9 @@
 	"settings": {
 		"editor.minimap.enabled": false,
 
-		// "files.exclude": {
-		// 	"**/bin": true,
-		// 	"**/obj": true
-		// }
+		"files.exclude": {
+			"**/bin": true,
+		 	"**/obj": true
+		 }
 	}
 }
