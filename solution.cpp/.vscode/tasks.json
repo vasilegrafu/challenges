@@ -1,49 +1,26 @@
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
-    "version": "2.0.0",
     "tasks": [
-        //----------------------------------------------------------------
         {
-            "label": "Build file for debug",
             "type": "shell",
-            "options": {
-                "cwd": "${fileDirname}"
-            },
+            "label": "C/C++: g++.exe build active file",
             "command": "g++.exe",
             "args": [
-                "-std=c++17",
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}/build/debug/${fileBasenameNoExtension}"
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "problemMatcher": []
-        },
-
-        //----------------------------------------------------------------
-        {
-            "label": "Build file for release",
-            "type": "shell",
             "options": {
-                "cwd": "${fileDirname}"
+                "cwd": "${workspaceFolder}"
             },
-            "command": "g++.exe",
-            "args": [
-                "-std=c++17",
-                "${file}",
-                "-o",
-                "${fileDirname}/build/release/${fileBasenameNoExtension}"
+            "problemMatcher": [
+                "$gcc"
             ],
             "group": {
                 "kind": "build",
                 "isDefault": true
-            },
-            "problemMatcher": []
+            }
         }
-    ]
+    ],
+    "version": "2.0.0"
 }
